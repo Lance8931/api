@@ -33,4 +33,9 @@ getMapTypeId()
 	返回：MapTypeId | string
 
 getProjection()
-	返回
+	返回：Projection
+	说明：返回当前的突出部分?. 如果地图没有被初始化(例如：mapType仍然是null), 那么结果为null. 可以监听 projection_change并检查该值以确保它不为null.
+	
+getStreetView()
+	返回：StreetViewPanorama
+	说明：
