@@ -1,40 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Google Map API 翻译</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-	<h3>Map class</h3>
-	<hr>
-	<table  border="1">
-		<tr>
-			<td colspan="2"><h5>构造器</h5></td>
-		</tr>
-		<tr>
-			<td>Map(mapDiv:Element, opts?:MapOptions)</td>
-			<td>在一个给定DIV的HTML容器中新创建一个地图</td>
-		</tr>
-	<table>
-	<table  border="1">
-		<tr>
-			<td colspan="2"><h5>构造器</h5></td>
-		</tr>
-		<tr>
-			<td>Map(mapDiv:Element, opts?:MapOptions)</td>
-			<td>在一个给定DIV的HTML容器中新创建一个地图</td>
-		</tr>
-	<table>
-  </body>
-</html>
+Map class
+----------------------------------------------
+构造器
+Map(mapDiv:Element, opts?:MapOptions)
+在一个给定DIV的HTML容器中新创建一个地图
+
+方法
+
+fitBounds(bounds:LatLngBounds|LatLngBoundsLiteral)
+	返回值：none
+	说明：设置包含了给定边界的视图
+
+getBounds()
+	返回值：LatLngBounds
+	说明：返回当前的边界的经纬度.If more than one copy of the world is visible, the bounds range in longitude from -180 to 180 degrees inclusive.如果地图还没有被初始化(例如，mapType仍然为null)，或者地图中心和放大大小没有被设置，那么结果是为 null 或 undefined.
+
+getCenter()
+	返回值：LatLng
+	说明：返回地图上可见的中心点位置经纬度坐标. 注意这个经纬度坐标对象是不会被覆盖.
+
+getClickableIcons()
+	返回值：boolean
+	说明：返回该地图标注是否可点击. A map icon represents a point of interest, also known as a POI. 如果返回值为真，那么这个标注在地图上是可以被点击的.
+
+getDiv()
+	返回：Element
+
+getHeading()
+	返回：number
+	说明：返回罗盘上的偏移角度. 该值是以地理北极方向为基础计算.
+
+getMapTypeId()
+	返回：MapTypeId | string
+
+getProjection()
+	返回
