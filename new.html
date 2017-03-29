@@ -1,3 +1,6 @@
+API Reference -Release(3.27)
+
+
 Map class
 ----------------------------------------------
 构造器
@@ -38,4 +41,45 @@ getProjection()
 	
 getStreetView()
 	返回：StreetViewPanorama
+	说明：返回一个相对于地图的默认街景边界，包括一个已经嵌入地图的默认街景或者使用了setStreetView()设置的街景. 改变地图的 stretViewControl(街景控制器)将会反射在已经存在的街景边界.
+
+getTilt()
+	返回：number
+	说明：返回一个当前地图的倾斜角度，是从视图平面到地图平面的角度. 如果为直视的角度，值就为0,45为45°的角度. 45°的图像只会在设置了地图类型为satellite和hybrid的时候有效，包括在一些地点和一些缩放等级里. 注意：这个方法不会返回用setTilt设置的值.详情请见setTilt.
+	
+getZoom()
+	返回：number
+	
+panBy(x:number, y:number)
+	返回：None
+	说明：通过给定的像素距离平移地图的中心点. 如果这个距离小于地图的高度和宽度, 那么这个移动过渡的效果将会是一种平滑的动画. 注意这个地理位置系统是从西往东(x 值)和从北到南(y 值)增加的.
+	
+panTo(latLng:LatLng | LatLngLiteral)
+	返回：None
+	说明：通过给定的地理坐标平移地图的中心点. 如果这个改变小于地图的高度和宽度(即不在当前地图中), 那么这个移动过渡的效果将会是一种平滑的动画.
+	
+panToBounds(latLngBounds:LatLngBounds | LatLngLiteral)
+	返回：None
 	说明：
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
