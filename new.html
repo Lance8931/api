@@ -45,7 +45,7 @@ getStreetView()
 
 getTilt()
 	返回：number
-	说明：返回一个当前地图的倾斜角度，是从视图平面到地图平面的角度. 如果为直视的角度，值就为0,45为45°的角度. 45°的图像只会在设置了地图类型为satellite和hybrid的时候有效，包括在一些地点和一些缩放等级里. 注意：这个方法不会返回用setTilt设置的值.详情请见setTilt.
+	说明：返回一个当前地图上所显示的倾斜角度，是从视图平面到地图平面的角度. 如果为直视的角度，值就为0,45为45°的角度. 45°的图像只会在设置了地图类型为satellite和hybrid的时候有效，包括在一些地点和一些缩放等级里. 注意：这个方法不会返回用setTilt设置的值.详情请见setTilt.
 	
 getZoom()
 	返回：number
@@ -85,7 +85,42 @@ setStreetView(panorama:StreetViewPanorama)
 	
 setTilt(tilt:number)
 	返回：None
-	说明：
+	说明：自动转换地图上的俯视角度的一个控制行为. 这个值只允许在0和45之间. 无论缩放比例还是视图, setTilt(0)会使得地图一直是0度的俯视图. setTilt(45)会使得俯视角度一直以45度自动转换只要45度的图片可以在当前的缩放比例和视图下可以显示, 如果45度俯视图不能显示将会转换回0度的俯视图. 45度俯视图只能在地图类型为satellite和hybrid, 并且在一些地方,一些特定的缩放比例下才可以显示. 注意: getTilt方法返回的是当前的俯视角度, 并不是setTilt设置的角度. 因为getTilt和setTilt引用的是不同的对象, 也不要用bind()绑定tilt属性； 这样做的话会产生不可预知的影响.
+	
+setZoom(zoom:number)
+	返回：None
+	
+属性(Properties)
+	
+controls
+	类型：Array<MVCArray<Node>>
+	说明：额外的控制器附加到map对象中. 增加一个控制器到map对象, 添加一个控制器的<div>层到MVCArray相当于这个ControlPosition应该被渲染(To add a control to the map, add the control's <div> to the MVCArray conrresponding to the ControlPosition where it should be rendered).
+	
+data
+	类型：Data
+	说明：一个绑定到map对象上的Data实例. 为这个Data对象添加了一些特性是为了方便在地图上显示他们.
+	
+mapTypes
+	类型：MapTypeRegistry
+	说明：一个通过string ID注册过的MapType实例.
+	
+overlayMapTypes
+	类型：MVCArray<MapType>
+	说明：额外的覆盖物的地图类型
+	
+事件(Events)
+
+bounds_changed
+	参数：None
+	说明：当视图的边界发生改变的时候会触发这个方法.
+	
+center_changed
+	参数：None
+	说明：当地图的中心值改变的时候会触发这个方法.
+	
+click
+	参数：MouseEvent | IconMouseEvent
+	说明：当用户点击地图的时候会触发这个方法. 如果不是一个地点的图标被点击了那么ApiMouseEvent将会带着被点击的地理位置的属性返回, 如果是图标被点击了那么返回的是这个placeid.IconMouseEvent和ApiMouseEvent是完全相同的, 除非IconMouseEvent获取placeid失败了. 这个事件可以总是被当做ApiMouseEvent当placeid不是很重要的时候. 如果点击了marker或者infowindow这个方法不会被触发.
 	
 	
 	
