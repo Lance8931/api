@@ -122,6 +122,178 @@ click
 	参数：MouseEvent | IconMouseEvent
 	说明：当用户点击地图的时候会触发这个方法. 如果不是一个地点的图标被点击了那么ApiMouseEvent将会带着被点击的地理位置的属性返回, 如果是图标被点击了那么返回的是这个placeid.IconMouseEvent和ApiMouseEvent是完全相同的, 除非IconMouseEvent获取placeid失败了. 这个事件可以总是被当做ApiMouseEvent当placeid不是很重要的时候. 如果点击了marker或者infowindow这个方法不会被触发.
 	
+dblclick
+	参数：MouseEvent
+	说明：当用户左键双击地图的时候会触发这个方法.注意当右键双击或者先右后左或先左后右的时候是不会触发这个事件.
+	
+drag
+	参数：None
+	说明：当用户拖动地图时重复性地触发.
+	
+dragend
+	参数：None
+	说明：当用户停止拖动地图时触发.
+
+dragstart
+	参数：None
+	说明：当用户开始拖动地图时触发.
+	
+heading_changed
+	参数：None
+	说明：当地图的偏移角度改变的时候触发.
+	
+idle
+	参数：None
+	说明：当地图在移动或者缩放之后变成空置时会触发.
+	
+maptypeid_changed
+	参数：None
+	说明：当地图的mapTypeId属性改变时触发.
+	
+mousemove
+	参数：MouseEvent
+	说明：当鼠标在地图容器里移动时候触发.
+	
+mouseout
+	参数：MouseEvent
+	说明：当鼠标移出地图容器时候触发.
+	
+mouseover
+	参数：MouseEvent
+	说明：当鼠标移进地图容器时候触发.
+	
+projection_chaged
+	参数：None
+	说明：当projection改变的时候触发.
+	
+resize
+	参数：None
+	说明：在需要使div改变大小的时候, 开发者应该使用触发器的方式触发这个方法: google.maps.event.trigger(map, 'resize');
+	
+rightclick
+	参数：MouseEvent
+	说明：在地图容器里当DOM的上下文菜单时间触发的时候触发.
+	
+tilesloaded
+	参数：None
+	说明：当可以使用的俯视角视图加载完毕的时候触发.
+	
+tile_changed
+	参数：None
+	说明：当地图的俯视角属性改变的时候触发.
+	
+zoom_changed
+	参数：None
+	说明：当地图的缩放属性改变的时候触发.
+	
+
+MapOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.MapOptions 对象说明
+
+属性
+backgroundColor
+	类型：string
+	说明：用于设置地图div容器的背景色. 这个颜色用于地图还没有加载完毕时显示. 这个选项只能在地图被初始化的时候设置.
+	
+center
+	类型：LatLng
+	说明：初始化地图的中心点. 必须.
+
+clickableIcons
+	类型：boolean
+	说明：当false时, 地图标识不能被点击. 这个地图标识表示一个兴趣点和一个POI(A map icon represents a point of interest, also known as a POI). 默认可以点击.
+	
+disableDefaultUI
+	类型：boolean
+	说明：是否显示默认的UI. 也许地图会被独立的重写.
+	
+disableDoubleClickZoom
+	类型：boolean
+	说明：开启双击鼠标缩放和定位功能. 默认开启.
+	
+draggable
+	类型：boolean
+	说明：如果false, 会阻止地图进行移动. 默认true. 
+	
+draggableCursor
+	类型：string
+	说明：当鼠标拖动一个可拖动的地图时, 自定义name或者url的鼠标会显示. 这个属性用于修改cursor标志的css样式属性. 在这个css样式属性中, 你必须声明至少一个可撤回的不是url的鼠标图标. 例如: draggingCursor:'url(http://www.example.com/icon.png), auto;'.
+	
+fullscreenControl
+	类型：boolean
+	说明：是否显示全屏.
+	
+fullscreenControlOption
+	类型：FullscreenControlOptions
+	说明：显示全屏时设置的选项.
+	
+gestureHanding
+	类型：string
+	说明：这设置可以控制地图上的手势操作方式. 允许以下的值: 
+		"cooperative": 两个手指触控手势平移和缩放地图, 可以当做所有的鼠标操作. 一个手指触控手势不能操作地图. 在这个模式下, 地图与网页一起配合使用, 所以一个手指触控手势可以移动页面. 
+		"greedy": 所有的触控手势都可以平移或者缩放地图.
+		"none": 不能通过任何的触控手势进行平移或者缩放地图操作.
+		"auto": (默认值)这种手势操作既不是cooperative也不是greedy, 而是根据页面是否可以滚动.
+		
+heading
+	类型：number
+	说明：设置罗盘上的偏移角度. 该值是以地理北极方向为基础计算. 该值将会以最有效的地图图像的最接近的可用的值对齐.
+	
+keyboardShortcuts
+	类型：boolean
+	说明：如果false, 会阻止地图通过键盘进行控制. 键盘快捷键是可用的(默认).
+	
+mapTypeControl
+	类型：boolean
+	说明：初始化地图类型状态是否可见.
+	
+mapTypeControlOptions
+	类型：MapTypeControlOptions
+	说明：初始化地图类型控制器选项.
+	
+mapTypeId
+	类型：MapTypeId
+	说明：初始化地图类型. 默认(ROADMAP).
+	
+maxZoom
+	类型：number
+	说明：最大的缩放比例将会在地图上显示. 如果省略或者设置为null, 这个值将会被当前的地图类型所使用的值代替. 合法的值: Integers类型的0到最大支持的值. 
+	
+minZoom
+	类型：number
+	说明：最小的缩放比例将会在地图上显示. 如果省略或者设置为null, 这个值将会被当前的地图类型所使用的值代替. 合法的值: Integers类型的0到最大支持的值. 
+
+noClear
+	类型：boolean
+	说明：如果true, 不能清理地图div里面的内容(包括什么内容?).
+	
+panControl
+	类型：boolean
+	说明：平移控制器的显示的操作项. 注意: 在JavaScript API v3.22版本新的控制器设置中不能使用这个平移控制器. 当使用v3.22和v3.23版本, 可以选择使用较早的控制器设置而不是新版本的控制器, 从而这个平移控制器只能使用部分的旧的控制器设置.
+	
+rotateControl
+	类型：boolean
+	说明：是否显示旋转控制器.
+	
+rotateControlOptions
+	类型：RotateControlOptions
+	说明：旋转控制器的初始化配置项.
+	
+scaleControl
+	类型：boolean
+	说明：是否显示缩放比例尺控制器.
+	
+scaleControlOptions
+	类型：ScaleControlOptions
+	说明：缩放比例尺控制器的初始化配置项.
+	
+scrollwheel
+	类型：boolean
+	说明：如果false, 禁止鼠标滚动缩放地图. 默认开启.
+
+	
+	
 	
 	
 	
