@@ -291,9 +291,92 @@ scaleControlOptions
 scrollwheel
 	类型：boolean
 	说明：如果false, 禁止鼠标滚动缩放地图. 默认开启.
+	
+signInControl
+	类型：boolean
+	说明：是否显示登录控制器. 这个选项只适用于如果signed_in=true在后台请求中通过了URL参数带的请求. 如果你已经提供了类似Google Sign-In button这种方式用于你的用户登录那么你也许想要使用这个选项去隐藏地图的登录控制器. 这个选项不会影响Google头像的显示当用户已经登录时.
+	
+streetView
+	类型：StreetViewPanorama
+	说明：当Google街景视图在地图上被清空时StreetViewPanorama会显示. 如果全景视图没有被声明, 那么一个默认的StreetViewPanorama会被显示在地图的div中当Google街景视图被清空时. 
 
+streetViewControl
+	类型：boolean
+	说明：是否显示初始化Google街景视图控制器. 这个控制器一部分是默认的UI, 当设置了用户类型为街景的街道类型而没有显示那么应该设置为false.
 	
+streetViewControlOptions
+	类型：StreetViewControlOptions
+	说明：初始化街景全景视图控制器选项. 
 	
+styles
+	类型：Array<MapTypeStyle>
+	说明：这些样式应用于每一个默认的地图类型. 注意对于satellite/hybrid/terrain模式, 这些样式仅仅适用于标签和几何图形(geometry).
+	
+tilt
+	类型：number
+	说明：自动转换地图上的俯视角度的一个控制行为. 这个值只允许在0和45之间. 无论缩放比例还是视图, 0会使得地图一直是0度的俯视图. 45会使得俯视角度一直以45度自动转换只要45度的图片可以在当前的缩放比例和视图下可以显示, 如果45度俯视图不能显示将会转换回0度的俯视图. 45度俯视图只能在地图类型为satellite和hybrid, 并且在一些地方,一些特定的缩放比例下才可以显示. 注意: getTilt方法返回的是当前的俯视角度, 并不是setTilt设置的角度. 因为getTilt和setTilt引用的是不同的对象, 也不要用bind()绑定tilt属性； 这样做的话会产生不可预知的影响.
+
+zoom
+	类型：number
+	说明：初始化地图缩放比例. 允许的值: 0到可支持的最大的值.
+	
+zoomControl
+	类型：boolean
+	说明：是否显示缩放控制器. 
+	
+zoomControlOptions
+	类型：ZoomControlOptions
+	说明：缩放控制器的显示选项.
+	
+
+MapTypeId 常量
+-----------------------------------------------------------------------------
+google.maps.MapTypeId 常量
+普通的MapTypes标识. 用值或者常量名声明使用. 例如, 'satellite'或者 google.maps.MapTypeId.SATELLITE.
+
+常量
+HYBRID
+	说明：显示一层透明的主干道的图层在卫星地图上.
+	
+ROADMAP
+	说明：普通的街道地图.
+	
+SATELLITE
+	说明：卫星地图.
+	
+TERRAIN
+	说明：显示一个带有例如地形和植被的自然标志的地图
+
+
+FullscreenControlOptions 对象说明	
+-----------------------------------------------------------------------------
+google.maps.FullscreenControlOptions
+这些选项用于绘制全屏控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明位置控制器在地图上的位置. 默认位置是 RIGHT_TOP.
+	
+MapTypeControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.MapTypeControlOptions 对象说明
+这些选项用于绘制地图类型控制器
+
+属性
+mapTypeIds
+	类型：Array<MapTypeId | string>
+	说明：在控制器里显示的地图类型列表的IDs. 
+	
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明位置控制器在地图上的位置. 默认位置是 TOP_RIGHT.
+	
+style
+	类型：MapTypeControlStyle
+	说明：Style id. 用于选择地图类型要显示那种样式. 
+	
+
 	
 	
 	
