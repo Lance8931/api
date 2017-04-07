@@ -358,6 +358,7 @@ position
 	类型：ControlPosition
 	说明：Position id. 用于声明位置控制器在地图上的位置. 默认位置是 RIGHT_TOP.
 	
+	
 MapTypeControlOptions 对象说明
 -----------------------------------------------------------------------------
 google.maps.MapTypeControlOptions 对象说明
@@ -377,20 +378,301 @@ style
 	说明：Style id. 用于选择地图类型要显示那种样式. 
 	
 
+MapTypeControlStyle 常量
+-----------------------------------------------------------------------------
+google.maps.MapTypeControlStyle 常量
+普通的MapTypesControls标识
+
+常量
+DEFAULT
+	说明：使用默认的地图类型控制器. 当默认的控制器被现实, 它会根据window的大小和其他元素进行变化. 这个默认的控制器应该是会在未来的API版本里做些变化.
+	
+DROPDOWN_MENU
+	说明：一个悬挂不能移动的下拉菜单
+
+HORIZONTAL_BAR
+	说明：一个标准的水平的单选按钮条.
+	
+
+MotionTrackingControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.MotionTrackingControlOptions 对象说明
+这些选项用于渲染手势追踪控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明该控制器在地图上的位置. 默认位置是RIGHT_BOTTON.
+	
+
+PanControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.PanControlOptions 对象说明
+这些选项用于渲染平移控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明该控制器在地图上的位置. 默认位置是TOP_LEFT.
 	
 	
+RotateControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.RotateControlOptions 对象说明
+这些选项用于渲染旋转控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明该控制器在地图上的位置. 默认位置是TOP_LEFT.	
 	
 	
+ScaleControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.ScaleControlOptions 对象说明
+这些选项用于渲染缩放比例尺控制器
+
+属性
+style
+	类型：ScaleControlStyle
+	说明：Style id. 用于选择缩放比例尺控制器应该显示哪种样式.
 	
 	
+ScaleControlStyle 常量
+-----------------------------------------------------------------------------
+google.maps.ScaleControlStyle 常量
+缩放比例尺的ids标识
+
+常量
+DEFAULT
+	说明：使用默认的地图类型控制器. 当默认的控制器被现实, 它会根据window的大小和其他元素进行变化. 这个默认的控制器应该是会在未来的API版本里做些变化.	
 	
 	
+StreetViewControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.StreetViewControlOptions 对象说明
+这些选项用于渲染在地图上的街景地图视图控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明该控制器在地图上的位置. 这个默认位置上内嵌了一个导航(缩放和平移)控制器. 如果这个位置是空置的或者声明了相同的zoomControlOptions或者panControlOptions, 街景视图控制器将会显示一部分的导航控制器. 相反, 它会独立地显示.
+
+
+ZoomControlOptions 对象说明
+-----------------------------------------------------------------------------
+google.maps.ZoomControlOptions 对象说明
+这些选项用于渲染缩放控制器
+
+属性
+position
+	类型：ControlPosition
+	说明：Position id. 用于声明该控制器在地图上的位置. 默认位置是TOP_LEFT.	
 	
-	
-	
-	
-	
-	
+
+ControlPosition 常量
+-----------------------------------------------------------------------------
+google.maps.ControlPosition 常量
+用于规定控制器在地图上的位置的标识. 控制器将会定位在相同层的位置上其他控制器的相对位置上. 第一个被添加的控制器的位置将会尽可能地靠近地图的边缘.
+  +----------------+ 
+  + TL    TC    TR + 
+  + LT          RT + 
+  +                + 
+  + LC          RC + 
+  +                + 
+  + LB          RB + 
+  + BL    BC    BR + 
+  +----------------+ 
+在top或者bottom行上的元素将会接近中间行. 在元素在left或者right列的元素将会接近中间列.
+
+常量
+BOTTOM_CENTER
+	说明：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
