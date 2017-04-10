@@ -487,22 +487,52 @@ google.maps.ControlPosition 常量
 
 常量
 BOTTOM_CENTER
-	说明：
+	说明：位于中间且底部的行.
+	
+BOTTOM_LEFT
+	说明：位于底部的左边并往中间靠. 元素位于Google logo的右边.
+	
+BOTTOM_RIGHT
+	说明：位于底部的右边并往中间靠. 元素位于版权声明的左边.
+	
+LEFT_BOTTOM
+	说明：位于左边, 在bottom-left的上边.往上靠.
+	
+LEFT_CENTER
+	说明：位于左边的中间位置.
+	
+LEFT_TOP
+	说明：位于左边, 在top-left的下边, 往下靠. 
+	
+RIGHT_BOTTOM
+	说明：位于右边, 在bottom-right的上边, 往上靠.
+	
+RIGHT_CENTER
+	说明：位于右边的中间位置.
+	
+RIGHT_TOP
+	说明：位于右边, 在top-right的下边, 往下靠.
+	
+TOP_CENTER
+	说明：位于中间且顶部的行.
+	
+TOP_LEFT
+	说明：位于顶部的左边并往中间靠.
+	
+TOP_RIGHT
+	说明：位于顶部的右边并往中间靠.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Data 类
+-----------------------------------------------------------------------------
+google.maps.Data 类
+显示地理空间层的数据集合. 点, 线段和多边形都可以被显示.
+每一个Map都有一个默认的Data, 所以大多数时候并不需要去初始化它. 例如: 
+	var myMap = new google.maps.Map(...);
+	myMap.data.addGeoJson(...);
+	myMap.data.setStyle(...);
+这个Data对象拥有集合的特征.
+这个类继承于MVCObject. 
 
 
 
